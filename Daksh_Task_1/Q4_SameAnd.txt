@@ -1,0 +1,1 @@
+I read up on bitwise operators and know about them now. In the question we want for any pair of numbers that we select that their bitwise AND operator gives us the number N. I do not know how to implement this though, i read up on bit manipulation through the leetcode link provided but i haven't solved many questions utilising it yet.

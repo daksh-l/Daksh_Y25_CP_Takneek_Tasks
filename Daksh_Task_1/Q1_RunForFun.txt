@@ -1,0 +1,21 @@
+#include <bits/stdc++.h>
+using namespace std;
+typedef long long ll;
+typedef pair<int, int> pii;
+typedef vector<int> vi;
+
+
+
+int main() {
+    int a,b;
+    cin >> a >> b;
+    if(b%a==0){
+        cout << b/a-1;
+    } else {
+        cout << b/a;
+    }
+
+}
+
+In the given question we just have to use division to find the number kms Chef can run before he rests.
+We used an if-else statement to handle the case where b is divisible by a. The other case of b%a!=0 is handled by just b/a as we are using ints and it will be automatically rounded down.

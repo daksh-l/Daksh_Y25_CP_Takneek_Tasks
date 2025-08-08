@@ -1,0 +1,48 @@
+Core logic of this question is the block of code with the if-else statement which was repeated thrice. 
+
+For example if we take the first if case, we need to add z-c to y as we are carrying forward the number of left oversized t-shirts as they can be resized to be smaller. We need this as we will not carry forward a negative case as in that case as we aren't able to satisfy the required number of customers itself and there will not be any shirts left to carry forward.
+
+
+#include <bits/stdc++.h>
+using namespace std;
+typedef long long ll;
+typedef pair<int, int> pii;
+typedef vector<int> vi;
+
+
+
+int main() {
+
+    int t;
+    cin >> t;
+    while(t--){
+        int x,y,z,a,b,c;
+        cin >>x>>y>>z>>a>>b>>c;
+        
+// initialise a var count for printing our final answer of satisfied customers
+
+        int count = 0;
+        if(z>c){
+            y = y+z-c;
+            count = count + c;
+        } else {
+            count = count + z;
+        }
+        
+        if(y>b){
+            x = x+y-b;
+            count = count +b;
+        } else {
+            count = count +y;
+        }
+        
+        if(x>a){
+            count = count + a;
+        } else {
+            count = count +x;
+        }
+        cout << count << "\n";
+
+    }
+
+}

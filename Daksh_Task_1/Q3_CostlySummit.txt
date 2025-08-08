@@ -1,0 +1,46 @@
+The question is an optimisation problem. We first use a frequency map to find the frequency of each language, then compare whether hiring a translator is more effective or learning the language would be better. 
+
+If only 1 language were there it is trivial to implement this.
+
+When there are multiple languages we first see the total cost with translators. Then each time we learn the language which occurs the highest and then add that as a fixed cost and check the total translator cost for the rest and keep repeating and comparing till we have learnt all of the languages. Just print out the least cost out of all of these iterations.
+
+#include <bits/stdc++.h>
+using namespace std;
+typedef long long ll;
+typedef pair<int, int> pii;
+typedef vector<int> vi;
+
+
+
+int main() {
+
+    int t;
+    cin >> t;
+    while(t--){
+        int n,c;
+        string s;
+        cin >> n >> c >> s;
+        
+        int arr[5] = {0};
+        for(int i = 0; i<n; i++){
+            arr[s[i]-'A']++;
+        }
+        
+        sort(arr, arr+5, greater<int>());
+
+        int temp1 = 0;
+        int temp2 = 0;
+        int final = n*(n+1)/2;
+        int cnt=0;
+        for(int i=0; i<5; i++){
+            if(arr[i]>0){
+                cnt = cnt + arr[i];
+                temp1 = temp1 +c;
+                temp2 = (n-cnt)*(n-cnt+1)/2;
+                final = min(temp1+temp2, final);
+            }
+        }
+        cout << final << "\n";
+    }
+
+}
