@@ -1,0 +1,5 @@
+We cannot repeat the same thing twice
+
+so everyday we need to check and add the other 2 activities
+
+we maintain a 2D array for all 3 activities and everyday then take the maximum of the previous days and keep adding then print final max value
